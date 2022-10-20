@@ -13,10 +13,10 @@
         "title": { "type": "title", "settings": {} },
         "price": { "type": "price", "settings": {} },
         "description": { "type": "description", "settings": {} },
-        "type": {
+        "productType": {
           "type": "text",
           "settings": {
-            "text": "{{ product.type }}",
+            "text": "{{ product.productType }}",
             "text_style": "uppercase"
           }
         },
@@ -36,7 +36,7 @@
         "title",
         "price",
         "description",
-        "type",
+        "productType",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
