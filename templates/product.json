@@ -16,7 +16,7 @@
         "productType": {
           "type": "text",
           "settings": {
-            "text": "{{ product.productType }}",
+            "text": "{{ product.productType }}{{product.type}}",
             "text_style": "uppercase"
           }
         },
