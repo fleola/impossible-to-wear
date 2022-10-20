@@ -359,7 +359,7 @@
                   {{ product.description }}
                 </div>
               {%- endif -%}
-              {%- when 'product_type' -%}
+              {%- when 'product_type' -%} {% comment %} case product type {% endcomment %}
                 <p
                   class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
@@ -1216,6 +1216,11 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "product_type",
+      "name": "Tipo",
       "limit": 1
     },
     {
