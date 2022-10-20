@@ -14,7 +14,7 @@
         "price": { "type": "price", "settings": {} },
         "description": { "type": "description", "settings": {} },
         "product_type": {
-          "type": "product_type",
+          "type": "text",
           "settings": {
             "text": "{{ product.type }}",
             "text_style": "uppercase"
