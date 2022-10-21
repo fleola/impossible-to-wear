@@ -1006,7 +1006,7 @@
     {%- endif -%}
       {% comment %} accordion script {% endcomment %}
   <script>
-    const acc = document.getElementsByClassName(".impossible_accordion");
+    const acc = document.querySelectorAll("impossible_accordion");
     for (let i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {
         this.classList.toggle("active");
