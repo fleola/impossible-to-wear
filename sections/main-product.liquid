@@ -359,15 +359,25 @@
                   {{ product.description }}
                 </div>
               {%- endif -%}
-              {% comment %} {%- when 'product_type' -%} {% comment %} case product type {% endcomment %}
-                <p
-                  class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{- block.settings.text -}} {{product.type}}{% comment %} accedere al tipo di prodotto {% endcomment %}
-                </p>   {% endcomment %}
             {%- when 'custom_liquid' -%}
-              {{ block.settings.custom_liquid }}
+              <button class="impossible_accordion">Section 1</button>
+                <div class="impossible_panel">
+                   <p>{{ block.settings.custom_liquid }}</p>
+                </div>
+                <script>
+                  const acc = document.querySelector(".impossible_accordion");
+                  for (let i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                      this.classList.toggle("active");
+                      let panel = this.nextElementSibling;
+                      if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                      } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                      }
+                    });
+                  }
+                  </script>
             {%- when 'collapsible_tab' -%}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
