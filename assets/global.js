@@ -1171,16 +1171,24 @@ customElements.define("product-recommendations", ProductRecommendations);
 
 customElements.define(
   "impossible-accordion",
-  class extends HTMLElement {
+  class ImpossibleAccordion extends HTMLElement {
+    constructor() {
+      super();
+    }
     connectedCallback() {
       this.onclick = (evt) => {
-        [...this.children].map((accordion) => {
-          !evt.ctrlKey &&
-            accordion.toggleAttribute("active", evt.target == accordion);
+        [...this.children].map(() => {
+          this.classList.toggle("active");
+          let panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
         });
       };
     }
-    impossibleAccordion() {
+    /* impossibleAccordion() {
       const accordion = document.querySelectorAll(".impossible_accordion");
       /* for (let i = 0; i < accordion.length; i++) {
           accordion[i].addEventListener("click", function () {
@@ -1192,7 +1200,7 @@ customElements.define(
               panel.style.display = "block";
             }
           });
-        } */
-    }
+        } 
+    } */
   }
 );
