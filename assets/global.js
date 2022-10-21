@@ -1173,7 +1173,6 @@ class ImpossibleAccordion extends HTMLElement {
     super();
   }
   connectedCallback() {
-    console.log("funziona o no?");
     const accordion = document.querySelectorAll(".impossible_accordion");
     for (let i = 0; i < accordion.length; i++) {
       accordion[i].addEventListener("click", function () {

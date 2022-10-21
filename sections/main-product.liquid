@@ -355,9 +355,14 @@
               </div>
             {%- when 'description' -%}
               {%- if product.description != blank -%}
+                <impossible-accordion>
+                <button class="impossible_accordion"><h4>Description</h4></button>
+                <div class="impossible_panel">
                 <div class="product__description rte quick-add-hidden">
                   {{ product.description }}
                 </div>
+                </div>
+              </impossible-accordion>
               {%- endif -%}
             {%- when 'custom_liquid' -%}
               <impossible-accordion>
@@ -385,13 +390,16 @@
                 </details>
               </div>
             {%- when 'quantity_selector' -%}
+
               <div
                 class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                 {{ block.shopify_attributes }}
               >
+
                 <label class="form__label" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                 </label>
+
 
                 <quantity-input class="quantity">
                   <button class="quantity__button no-js-hidden" name="minus" type="button">
@@ -487,9 +495,14 @@
                     {{ block.shopify_attributes }}
                   >
                     {%- for option in product.options_with_values -%}
+                      <impossible-accordion>
                       <fieldset class="js product-form__input">
+                        <button class="impossible_accordion">
                         <legend class="form__label">{{ option.name }}</legend>
+                        </button>
+                        <div class="impossible_panel">
                         {%- for value in option.values -%}
+
                           <input
                             type="radio"
                             id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -504,7 +517,9 @@
                             {{ value }}
                           </label>
                         {%- endfor -%}
+                      </div>
                       </fieldset>
+                    </impossible-accordion>
                     {%- endfor -%}
                     <script type="application/json">
                       {{ product.variants | json }}
@@ -518,10 +533,13 @@
                     {{ block.shopify_attributes }}
                   >
                     {%- for option in product.options_with_values -%}
+                      <impossible-accordion>
                       <div class="product-form__input product-form__input--dropdown">
+                        <button class="impossible_accordion">
                         <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                           {{ option.name }}
                         </label>
+                      </button>
                         <div class="select">
                           <select
                             id="Option-{{ section.id }}-{{ forloop.index0 }}"
@@ -529,6 +547,7 @@
                             name="options[{{ option.name | escape }}]"
                             form="{{ product_form_id }}"
                           >
+                            <div class="impossible_panel">
                             {%- for value in option.values -%}
                               <option
                                 value="{{ value | escape }}"
@@ -539,10 +558,12 @@
                                 {{ value }}
                               </option>
                             {%- endfor -%}
+                          </div>
                           </select>
                           {% render 'icon-caret' %}
                         </div>
                       </div>
+                    </impossible-accordion>
                     {%- endfor -%}
 
                     <script type="application/json">
