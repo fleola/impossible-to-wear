@@ -488,13 +488,13 @@
             {%- when 'variant_picker' -%}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
+                  <impossible-accordion>
                   <variant-radios
                     class="no-js-hidden"
                     data-section="{{ section.id }}"
                     data-url="{{ product.url }}"
                     {{ block.shopify_attributes }}
                   >
-                    <impossible-accordion>
                       <button class="impossible_accordion"><h4 class="form__label">{{'products.product.product_variants' | t}}</h4></button>
                       <div class="impossible_panel">
                         {%- for option in product.options_with_values -%}
@@ -525,13 +525,13 @@
                     </script>
                   </variant-radios>
                 {%- else -%}
+                <impossible-accordion>
                   <variant-selects
                     class="no-js-hidden"
                     data-section="{{ section.id }}"
                     data-url="{{ product.url }}"
                     {{ block.shopify_attributes }}
                   >
-                    <impossible-accordion>
                       <button class="impossible_accordion"><h4 class="form__label">{{'products.product.product_variants' | t}}</h4></button>
                       <div class="impossible_panel">
                         {%- for option in product.options_with_values -%}
