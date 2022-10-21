@@ -356,7 +356,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <impossible-accordion>
-                <button class="impossible_accordion"><h4>Description</h4></button>
+                <button class="impossible_accordion"><h4 class="form__label">{{'products.product.description' | t}}</h4></button>
                 <div class="impossible_panel">
                 <div class="product__description rte quick-add-hidden">
                   {{ product.description }}
@@ -366,7 +366,7 @@
               {%- endif -%}
             {%- when 'custom_liquid' -%}
               <impossible-accordion>
-              <button class="impossible_accordion">{{ block.settings.text }}</button>
+              <button class="impossible_accordion">{{ block.settings.share_label }}</button>
                 <div class="impossible_panel">
                    <p>{{ block.settings.custom_liquid }}</p>
                 </div>

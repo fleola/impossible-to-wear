@@ -38,7 +38,7 @@
   padding: 18px;
   width: 100%;
   text-align: left;
-  border: 1px solid darkgrey;
+  border-bottom: 1px solid darkgrey;
   outline: none;
   transition: 0.4s;
   display: flex;
