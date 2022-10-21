@@ -125,6 +125,7 @@
       "sold_out": "Esaurito",
       "unavailable": "Non disponibile",
       "vendor": "Fornitore",
+      "type": "Tipo",
       "video_exit_message": "{{ title }} apre un video a schermo intero nella stessa finestra.",
       "xr_button": "Visualizza nel tuo spazio",
       "xr_button_label": "Visualizza nel tuo spazio, carica l'articolo nella finestra della realtà aumentata",
