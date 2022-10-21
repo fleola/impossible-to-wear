@@ -495,7 +495,7 @@
                     {{ block.shopify_attributes }}
                   >
                     <impossible-accordion>
-                      <button class="impossible_accordion"></button>
+                      <button class="impossible_accordion"><h4 class="form__label">{{'products.product.product_variants' | t}}</h4></button>
                       <div class="impossible_panel">
                         {%- for option in product.options_with_values -%}
                           <fieldset class="js product-form__input">
@@ -532,7 +532,7 @@
                     {{ block.shopify_attributes }}
                   >
                     <impossible-accordion>
-                      <button class="impossible_accordion"></button>
+                      <button class="impossible_accordion"><h4 class="form__label">{{'products.product.product_variants' | t}}</h4></button>
                       <div class="impossible_panel">
                         {%- for option in product.options_with_values -%}
                           <div class="product-form__input product-form__input--dropdown">
