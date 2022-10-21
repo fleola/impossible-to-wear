@@ -25,7 +25,8 @@
         "product_type": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<h4>Tipo</h4>\n<p>{{ product.type | string}}</p>"
+            "text": "<h4>Tipo</h4>",
+            "custom_liquid": "<p>{{ product.type | string}}</p>"
           }
         },
         "variant_picker": {

@@ -360,7 +360,7 @@
                 </div>
               {%- endif -%}
             {%- when 'custom_liquid' -%}
-              <button class="impossible_accordion">Section 1</button>
+              <button class="impossible_accordion">{{ block.settings.text }}</button>
                 <div class="impossible_panel">
                    <p>{{ block.settings.custom_liquid }}</p>
                 </div>
@@ -378,6 +378,7 @@
                     });
                   }
                   </script>
+               
             {%- when 'collapsible_tab' -%}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -1180,6 +1181,21 @@
       ]
     }
   </script>
+  {% comment %} accordion script {% endcomment %}
+  <script>
+    const acc = document.getElementByClassName(".impossible_accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
 </section>
 
 {% schema %}
