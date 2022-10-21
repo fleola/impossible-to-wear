@@ -1004,6 +1004,21 @@
         </media-gallery>
       </div>
     {%- endif -%}
+      {% comment %} accordion script {% endcomment %}
+  <script>
+    const acc = document.getElementsByClassName(".impossible_accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+    </script>
   </div>
 
   <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
@@ -1166,21 +1181,7 @@
       ]
     }
   </script>
-  {% comment %} accordion script {% endcomment %}
-  <script>
-    const acc = document.getElementsByClassName(".impossible_accordion");
-    for (let i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-      });
-    }
-    </script>
+
 </section>
 
 {% schema %}
