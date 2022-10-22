@@ -372,7 +372,7 @@
               {%- endif -%}
             {%- when 'custom_liquid' -%}
               <impossible-accordion>
-              <button class="impossible_accordion"><h4 class="form__label">{{ block.settings.label }}</h4></button>
+              <button class="impossible_accordion"><h4 class="form__label">{{ block.settings.customLabel }}{{ block.customLabel }}</h4></button>
                 <div class="impossible_panel">
                    <p>{{ block.settings.custom_liquid }}</p>
                 </div>
