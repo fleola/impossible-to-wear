@@ -25,7 +25,7 @@
         "product_type": {
           "type": "custom_liquid",
           "settings": {
-            "label": "Tipo",
+            "label": "{{'products.product.type' | t}}",
             "custom_liquid": "<p>{{ product.type | string}}</p>"
           }
         },
