@@ -24,9 +24,8 @@
         },
         "product_type": {
           "type": "custom_liquid",
-          "customLabel": "{{'products.product.type' | t}}",
           "settings": {
-            "customLabel": "{{'products.product.type' | t}}",
+            "label": "Tipo",
             "custom_liquid": "<p>{{ product.type | string}}</p>"
           }
         },
