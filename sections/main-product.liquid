@@ -31,7 +31,7 @@
   {%- if product.type == "T-Shirt" -%}
     <div class="impossibleVideoWrapper">
      <iframe width="560" height="315" src="https://www.youtube.com/embed/1VUa99-tJqs?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
+    </div>
   {%- endif -%}
 
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -362,7 +362,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <impossible-accordion>
-                <button class="impossible_accordion"><h4 class="form__label">{{'products.product.quantity.label' | t}}</h4></button>
+                <button class="impossible_accordion"><h4 class="form__label">{{'products.product.description' | t}}</h4></button>
                 <div class="impossible_panel">
                 <div class="product__description rte quick-add-hidden">
                   {{ product.description }}
@@ -372,7 +372,7 @@
               {%- endif -%}
             {%- when 'custom_liquid' -%}
               <impossible-accordion>
-              <button class="impossible_accordion"><h4 class="form__label">{{'products.product.type' | t}}</h4></button>
+              <button class="impossible_accordion"><h4 class="form__label">{{ block.settings.label }}</h4></button>
                 <div class="impossible_panel">
                    <p>{{ block.settings.custom_liquid }}</p>
                 </div>
